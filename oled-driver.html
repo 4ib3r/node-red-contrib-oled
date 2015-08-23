@@ -1,0 +1,57 @@
+<script type="text/javascript">
+    RED.nodes.registerType('oled-settings',{
+        category: 'config',
+        defaults: {
+            width: {value:128,required:true,validate:RED.validators.number()},
+            height: {value:32,required:true,validate:RED.validators.number()},
+            device: {value:"/dev/i2c-0", required: true},
+            address: {value: 0x3c, required: true, validate:RED.validators.regex(/0x[0-9a-f]+/)}
+        },
+        label: function() {
+            return this.width +"x" + this.height + " [" + this.address + "]";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="oled-settings">
+    <div class="form-row">
+        <label for="node-config-input-width"><i class="icon-bookmark"></i> Width</label>
+        <input type="text" id="node-config-input-width">
+    </div>
+    <div class="form-row">
+        <label for="node-config-input-height"><i class="icon-bookmark"></i> Height</label>
+        <input type="text" id="node-config-input-height">
+    </div>
+    <div class="form-row">
+        <label for="node-config-input-device"><i class="icon-bookmark"></i> Device</label>
+        <input type="text" id="node-config-input-device">
+    </div>
+    <div class="form-row">
+        <label for="node-config-input-address"><i class="icon-bookmark"></i> Address</label>
+        <input type="text" id="node-config-input-address">
+    </div>
+</script>
+
+<script type="text/javascript">
+    RED.nodes.registerType('oled-out',{
+        category: 'output',
+        icon: 'hash.png',
+        color: '#A6BBCF',
+        defaults: {
+            lcd: {value: "", type: "oled-settings"},
+            text: {value: ""}
+        },
+        label: function() {
+            return this.width +"x" + this.height + " [" + this.address + "]";
+        }
+    });
+</script>
+
+
+
+<script type="text/x-red" data-template-name="oled-out">
+    <div class="form-row">
+        <label for="node-config-input-text"><i class="icon-bookmark"></i> Text</label>
+        <input type="text" id="node-config-input-text">
+    </div>
+</script>
