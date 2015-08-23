@@ -1,0 +1,27 @@
+{
+  "name": "node-red-contrib-oled",
+  "version": "0.0.1",
+  "description": "Node-Red module for oled display on Raspberry Pi or Banana Pi",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/4ib3r/node-red-contrib-oled.git"
+  },
+  "keywords": [
+    "raspberry",
+    "pi",
+    "banana",
+    "pi",
+    "node-red",
+    "oled"
+  ],
+  "author": "4ib3r",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/4ib3r/node-red-contrib-oled/issues"
+  },
+  "homepage": "https://github.com/4ib3r/node-red-contrib-oled#readme"
+}
